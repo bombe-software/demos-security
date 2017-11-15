@@ -15,3 +15,10 @@ exports.generatorKeys = function (p, q) {
     }
     return { D:d, E:e, N:n }
 };
+exports.stringToASCIICifrado = function(n, clave, m){
+    var string = '';
+    for (var i = n.length - 1; i >= 0; i--) {
+        ascii += (Math.pow(n.charCodeAt(i), clave)%m).toString();
+    };
+    return string;
+}

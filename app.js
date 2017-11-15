@@ -8,7 +8,7 @@ var bodyParser =  require("body-parser");
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000, http://localhost:8080');
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -30,8 +30,11 @@ app.use(bodyParser.json());
 /*
  *	Configuracion de las rutas
  */ 
-var encrypted  = require("./routes/encrypted");
-app.get('/des', encrypted.des);
+var ticket_controller  = require("./routes/ticket_controller");
+app.post('/ticket_controller', ticket_controller.post);
+
+var exmple  = require("./routes/exmple");
+app.get('/example', exmple.post);
  
 /*
  *	Poner a la escucha el servidor 

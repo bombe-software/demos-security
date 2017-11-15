@@ -227,6 +227,20 @@ class Parseador {
         return parseInt(n, 2).toString(16)
     }
 
+    stringToBinary(input) {
+      var output = "";
+      for (var i = 0; i < input.length; i++) {
+        let encode = input[i].charCodeAt(0).toString(2);
+        if(encode.length < 8){
+            for (var i = 8-encode.length; i < 8; i++) {
+                encode += '0';
+            };
+        }
+        output += encode;
+      }
+      return output;
+    } 
+
 }
 class Permutador {
     /**
@@ -419,6 +433,9 @@ class DES {
         // console.log("Binario " + cadenas64);
 
         let cifradoAnt = this.cifrar_64(cadena, clave);
+        let parse = new Parseador().stringToBinary(cadena);
+
+        console.log(parse);
 
         return cifradoAnt;
     }
