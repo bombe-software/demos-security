@@ -7,11 +7,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
-<<<<<<< HEAD
-    "crypto-js": "3.1.9-1",
-=======
     "crypto-js": "^3.1.9-1",
->>>>>>> 2ddf815b42a6da4577bb1a748728f1fb0e9f6e24
     "express": "4.15.2",
     "mysql": "^2.14.1",
     "nodemon": "^1.12.1",
